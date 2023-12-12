@@ -13,12 +13,12 @@ public class Main {
         System.out.println("==명언 앱==");
         int id = 1;
         while (true) {
-            System.out.println("명령: ");
+            System.out.print("명령: ");
             String command = sc.nextLine();
             if (command.equals("등록")) {
-                System.out.println("명언: ");
+                System.out.print("명언: ");
                 String content = sc.nextLine();
-                System.out.println("작가: ");
+                System.out.print("작가: ");
                 String author = sc.nextLine();
                 System.out.println(id + "번 값을 출력합니다.");
                 WiseSaying saying = new WiseSaying(id, author, content);
@@ -30,10 +30,10 @@ public class Main {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("--------------");
                 for (WiseSaying wiseSaying : wiseSayings) {
-                    System.out.println(wiseSaying.getId() + wiseSaying.getContent() + wiseSaying.getAuthor());
+                    System.out.println(wiseSaying.getId() + "/" + wiseSaying.getContent() + "/" + wiseSaying.getAuthor());
                 }
             } else if (command.equals("삭제")) {
-                System.out.println("삭제할 값을 입력해주세요: ");
+                System.out.print("삭제할 값을 입력해주세요: ");
                 int delete = Integer.parseInt(sc.nextLine());
                 for (int i = 0; i < wiseSayings.size(); i++) {
                     WiseSaying wiseSaying = wiseSayings.get(i);
@@ -42,10 +42,10 @@ public class Main {
                     }
                 }
                 System.out.println(delete + "번 명언은 삭제되었습니다.");
-            }
-            else if (command.equals("수정")) {
-                System.out.println("수정할 값을 입력해주세요: ");
+            } else if (command.equals("수정")) {
+                System.out.print("수정할 값을 입력해주세요: ");
                 int modify = Integer.parseInt(sc.nextLine());
+
                 for (int j = 0; j < wiseSayings.size(); j++) {
                     WiseSaying awiseSaying = wiseSayings.get(j);
                     System.out.printf("기존명언: %s \n", awiseSaying.getContent());
@@ -55,11 +55,12 @@ public class Main {
                     System.out.printf("기존작가: %s \n", awiseSaying.getAuthor());
                     String author = sc.nextLine();
                     awiseSaying.setAuthor(author);
-
                 }
-                System.out.println(id + "값이 수정되었습니다.");
+                System.out.println( modify+ "값이 수정되었습니다.");
+
             }
-        }sc.close();
+        }
+        sc.close();
     }
 }
 
