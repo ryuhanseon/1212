@@ -32,18 +32,18 @@ public class Main {
                 for (WiseSaying wiseSaying : wiseSayings) {
                     System.out.println(wiseSaying.getId() + "/" + wiseSaying.getContent() + "/" + wiseSaying.getAuthor());
                 }
-            } else if (command.equals("삭제")) {
-                System.out.print("삭제할 값을 입력해주세요: ");
-                int deleteId = Integer.parseInt(sc.nextLine());
-                for (int i = 0; i < wiseSayings.size(); i++) {
-                    WiseSaying wiseSaying = wiseSayings.get(i);
-                    if (wiseSaying.getId() == delete) {
+            } else if (command.equals("삭제")) {   //만약에 command의 값이 삭제라면
+                System.out.print("삭제할 Id값을 입력해주세요: "); //"삭제할 Id값을 입력해주세요: " 라는 값을 출력한다.
+                int deleteId = Integer.parseInt(sc.nextLine()); //정수형 변수에 deleteId라는 객체를 지정해주고 nextLine이 문자열이기 때문에 형변환을 위해 Interfer.parseInt를 이용한다.
+                for (int i = 0; i < wiseSayings.size(); i++) { //for문을 이용해서 for문안에 int형의 i라는 객체에 0을 대입하고 i의 값을 증가시키고 삭제할 값을 넣어줘서
+                    WiseSaying wiseSaying = wiseSayings.get(i); //wiseSaying
+                    if (wiseSaying.getId() == deleteId) {
                         wiseSayings.remove(wiseSaying);
                     }
                 }
-                System.out.println(delete + "번 명언은 삭제되었습니다.");
+                System.out.println(deleteId + "번 명언은 삭제되었습니다.");
             } else if (command.equals("수정")) {
-                System.out.print("수정할 값을 입력해주세요: ");
+                System.out.print("수정할 Id값을 입력해주세요: ");
                 int modifyId = Integer.parseInt(sc.nextLine());
 
                 for (int j = 0; j < wiseSayings.size(); j++) {
@@ -56,7 +56,7 @@ public class Main {
                     String author = sc.nextLine();
                     awiseSaying.setAuthor(author);
                 }
-                System.out.println( modify+ "값이 수정되었습니다.");
+                System.out.println( modifyId+ "값이 수정되었습니다.");
 
             }
         }
