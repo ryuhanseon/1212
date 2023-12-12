@@ -34,7 +34,7 @@ public class Main {
                 }
             } else if (command.equals("삭제")) {
                 System.out.print("삭제할 값을 입력해주세요: ");
-                int delete = Integer.parseInt(sc.nextLine());
+                int deleteId = Integer.parseInt(sc.nextLine());
                 for (int i = 0; i < wiseSayings.size(); i++) {
                     WiseSaying wiseSaying = wiseSayings.get(i);
                     if (wiseSaying.getId() == delete) {
@@ -44,7 +44,7 @@ public class Main {
                 System.out.println(delete + "번 명언은 삭제되었습니다.");
             } else if (command.equals("수정")) {
                 System.out.print("수정할 값을 입력해주세요: ");
-                int modify = Integer.parseInt(sc.nextLine());
+                int modifyId = Integer.parseInt(sc.nextLine());
 
                 for (int j = 0; j < wiseSayings.size(); j++) {
                     WiseSaying awiseSaying = wiseSayings.get(j);
